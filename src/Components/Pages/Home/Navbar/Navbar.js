@@ -28,7 +28,7 @@ const Navbar = () => {
                     <li className='relative m-2'><Link className='h-12 menu-link text-2xl relative block px-4 py-3 overflow-hidden' to=""><span>Who are We</span><span>Who are We</span></Link></li>
                     <h2 className='mx-2 hidden md:block'><Link className='text-2xl relative block px-5 py-5 logo font-bold -mt-4 rounded-full' to=""> <span className="font-['Mochiy_Pop_P_One']">Life</span> <br />Trotting</Link></h2>
                     <li className='relative m-2'><Link className='h-12 menu-link text-2xl relative block px-3 py-3 overflow-hidden' to=""><span>Plan your Trip</span> <span>Plan your Trip</span></Link></li>
-                    <li className='relative m-2'><Link className='h-12 menu-link text-2xl relative block px-3 py-3 overflow-hidden' to=""><span>Get add Experience</span><span>Get add Experience</span></Link></li>
+                    <li className='relative m-2'><Link className='h-12 menu-link text-2xl relative block px-3 py-3 overflow-hidden' to=""><span>Add own Experience</span><span>Add own Experience</span></Link></li>
                 </ul>
                 </div>
                 
