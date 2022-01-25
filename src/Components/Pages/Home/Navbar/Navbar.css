@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+.menubar{
+    border-bottom: 2px solid rgb(251, 255, 0);
+}
+.menu li span{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: .5s;
+    padding: 4px 0;
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    transition-delay: 0s;
+}
+.menu li .menu-link::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 66, 0);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+}
+.menu li .menu-link:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+    transition-delay: 0.5s;
+    
+}
+.menu li .menu-link:hover span{
+    color: white;
+    transition: .5s;
+}
+.menu li .menu-link:hover span:nth-child(1){
+    transform: translateY(-114%);
+    transition-delay: 0s;
+}
+.menu li .menu-link:hover span:nth-child(2){
+    transform: translateY(-110%);
+    transition-delay: 0s;
+}
+.logo{
+    /* border-radius: 99% 0% 100% 0% / 100% 0% 99% 0% ; */
+    color: #9B0000;
+    font-family: 'Sedgwick Ave', cursive;
+    background-color: orange;
+}
+.menu{
+    transition: .5s;
+}
+@media screen and (max-width: 942px) {
+    .menu-link{
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .menu{
+        left: 0;
+        margin-top: 3rem;
+        transition: .5s;
+    }
+}
