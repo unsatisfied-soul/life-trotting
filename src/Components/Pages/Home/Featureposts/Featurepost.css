@@ -1,0 +1,9 @@
+.feature-heading::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: rgba(41, 40, 40, 0.822);
+    margin-left: -52px;
+    margin-top: 30px;
+}
