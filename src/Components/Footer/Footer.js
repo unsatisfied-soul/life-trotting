@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='footer border-dashed border-t-2 border-[#6d6d6d] text-left py-8 flex gap-6'>
+        <div className='footer border-dashed border-t-2 border-[#6d6d6d] text-left py-8 flex gap-6 mt-8'>
             <div className="footer-left relative left-12">
             <div className="social-link mb-4">
                 <Link to="www.facebook.com" className='ml-4'>

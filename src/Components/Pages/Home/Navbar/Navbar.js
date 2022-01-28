@@ -12,7 +12,10 @@ const Navbar = () => {
         <div className='flex justify-between md:block bg-[#81d8f3] pt-6 pb-3 relative menubar'>
             {
                 user?.email ?
-                <button onClick={logout} className='absolute right-12 top-2 bg-[#ff6b16] text-xl text-white font-medium px-8 py-4'>LogOut</button>
+                <div className="login-data absolute right-10 top-2">
+                    <h2 className='h-16 w-16 bg-[#ff6b16] text-5xl text-white rounded-full'>{user.email.charAt(0)}</h2>
+                    <button onClick={logout} className=' bg-[#ff6b16] hidden text-xl text-white font-medium px-8 py-4'>LogOut</button>
+                </div>
                 :
                 <Link to='/login'> <button className='absolute right-12 top-2 bg-[#ff6b16] text-xl text-white font-medium px-8 py-4'>Login</button>
                 </Link>

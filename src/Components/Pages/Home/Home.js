@@ -1,11 +1,14 @@
 import React from 'react';
+import FetchData from '../../FetchData/FetchData';
+import AdventurePic from './AdventurePic/AdventurePic';
 import Featurepost from './Featureposts/Featurepost';
-import Navbar from './Navbar/Navbar';
 
 const Home = () => {
     return (
         <div>
             <Featurepost />
+            <AdventurePic />
+            <FetchData />
         </div>
     );
 };
