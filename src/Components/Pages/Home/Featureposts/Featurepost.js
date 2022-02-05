@@ -10,7 +10,7 @@ const Featurepost = () => {
                 <p className="font-medium mx-6 text-2xl text-[#a1a1a1bd] font-['Patrick_Hand']">Browse through our first-hand travel articles, supported by beautiful photo material. Through our lens you'll only get to see the reality around us: real life - no staging and no pre-arrangements of any kind.</p>
             </div>
             <div className="feature-details">
-                <TravelExperience />
+                {/* <TravelExperience /> */}
             </div>
         </div>
     );

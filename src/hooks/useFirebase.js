@@ -2,7 +2,12 @@ import initializeFirebase from "../Components/Firebase/Firebase.init";
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, getIdToken, signOut,sendEmailVerification  } from "firebase/auth";
+import Swal from 'sweetalert2'
+import SweetAlert from 'sweetalert2-react';
+import withReactContent from 'sweetalert2-react-content'
+import { useNavigate } from "react-router-dom";
 
+const MySwal = withReactContent(Swal)
 
 
 // initialize firebase app
@@ -12,22 +17,31 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true)
   const [autherror,setAuthError]= useState('')
-
+  const [fire,setFire] = useState(false)
+  
+ 
   const auth = getAuth()
 
   const registerUser = (email,password,name,navigate) => {
     setIsLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    .then((result) => {
+      result.user.sendEmailVerification()
+      if(result){
+        Swal.fire({
+            position: 'middle',
+            icon: 'success',
+            title: 'Registration Succesfully',
+            showConfirmButton: false,
+            timerProgressBar: true,
+            timer: 1000
+          })
+          navigate('/')
+    }
       // Signed in 
+      navigate('/')
       setAuthError('');
-      const newUser = { email, displayName: name };
-      setUser(newUser)
-
-      //save user
-      saveUser(email,name)
-      emailVarified()
-      // ...
+      
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -46,7 +60,6 @@ const useFirebase = () => {
       navigate(destination);
       setAuthError('');
       
-      // ...
     })
     .catch((error) => {
 
@@ -56,13 +69,14 @@ const useFirebase = () => {
     }
 
     //email verified
-    const emailVarified = () => {
-      sendEmailVerification(auth.currentUser)
-      .then (result=> {
-      console.log(result)
-
-      })
-    }
+    // const emailVarified = (email,name) => {
+    //   sendEmailVerification(auth.currentUser)
+    //   .then (result=> {
+    //     const newUser = { email, displayName: name };
+    //     setUser(newUser)
+    //     saveUser(email,name)
+    //   })
+    // }
 
   //observe user
   useEffect(()=> {
@@ -95,7 +109,7 @@ const useFirebase = () => {
       axios.post('https://nameless-brushlands-69236.herokuapp.com/users',users)
       .then(res => {
         if(res.data.insertedId){
-            alert('successfully registered')
+          setFire(true)
         }
         
     })

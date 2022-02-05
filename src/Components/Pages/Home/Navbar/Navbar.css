@@ -45,13 +45,9 @@
     transition-delay: 0s;
 }
 .logo{
-    /* border-radius: 99% 0% 100% 0% / 100% 0% 99% 0% ; */
     color: #9B0000;
     font-family: 'Sedgwick Ave', cursive;
     background-color: orange;
-}
-.menu{
-    transition: .5s;
 }
 @media screen and (max-width: 942px) {
     .menu-link{

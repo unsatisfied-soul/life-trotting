@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const TravelExperience = (props) => {
     console.log(props)
-    // const {_id,writer,img,title,desc}=props.travelexperience
-    // const {_id,writer,img,title,desc}=props.travelexperience
-    // const split = desc.split('')
-    // const doted = '...';
-    // const shortArray = split.slice(0,200).join('').concat(doted)
+        // const {_id,writer,img,title,desc}=props.singleData
+        // const split = desc.split('')
+        // const doted = '...';
+        // const shortArray = split.slice(0,200).join('').concat(doted)
+    
     return (
         <div>
             {/* <div className="tour-img w-1/2">
@@ -23,6 +23,7 @@ const TravelExperience = (props) => {
            </div> */}
         </div>
     );
+
 };
 
 export default TravelExperience;
