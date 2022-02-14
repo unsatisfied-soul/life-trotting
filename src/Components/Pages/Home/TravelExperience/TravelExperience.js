@@ -4,8 +4,6 @@ import './TravelExperience.css'
 
 const TravelExperience = (props) => {
     const {_id,travelImage,title,date}=props.singleExperience
-    console.log(props.singleExperience)
-    // const {_}=useParams()
     
     return (
         <div className='travel-blog relative border-2 border-[#ffd416] overflow-hidden'>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons';
 import TravelExperience from './TravelExperience';
 import { Link } from 'react-router-dom';
 
@@ -18,9 +17,7 @@ const FetchTravelExperienceData = () => {
     return (
         <Link to ='/'>
         <div>
-            
-            
-            <div className="travelexperience py-8 mb-16">
+            <div className="travelexperience py-20">
                 {travelexperience.length == 0 ?  <div className="animate-pulse mx-auto">
                         <div className="rounded-full bg-yellow-500 h-12 w-12 mx-auto"></div>
                     </div> : <div className="single-travel gap-6 w-5/6 mx-auto">
