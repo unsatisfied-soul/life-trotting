@@ -15,15 +15,15 @@ const Navbar = () => {
                 user?.email ?
                 <div className="login-data absolute right-10 top-2 z-40">
                     <div onClick={()=> setLogInfo(!logInfo)} className="login-id flex justify-center">
-                        <h2 className='h-16 w-16 bg-[#ff6b16] text-5xl text-white rounded-full'>{user.email.charAt(0)}</h2>
+                        <h2 className='h-16 w-16 bg-[#ff6b16] text-5xl text-white rounded-full cursor-pointer'>{user.email.charAt(0)}</h2>
                         
                     </div> 
                     <div className={logInfo ? "block login-info": "hidden"}>
                         <h4 className='relative -top-3 text-[#ff6b16] text-2xl'><FontAwesomeIcon icon={faCaretDown} /></h4>
-                        <ul className='bg-[#ff6b16] relative -top-4 py-3 px-4 login_data'>
-                            <li><button onClick={logout}>LogOut</button></li>
-                            <li>Make a Admin</li>
-                            <li>All Experience</li>
+                        <ul className='bg-[#ff6b16] relative -top-4 py-1 login_data overflow-hidden'>
+                            <li className='hover:bg-[#9AD0EC] hover:scale-125 ease-in-out duration-300 px-6 py-2 border-b-2'>All Stories</li>
+                            <li className='hover:bg-[#9AD0EC] hover:scale-125 ease-in-out duration-300 px-6 py-2 border-b-2'>Make a Admin</li>
+                            <li className='hover:bg-[#9AD0EC] hover:scale-125 ease-in-out duration-300 px-6 py-2 '><button onClick={logout}>LogOut</button></li>
                         </ul>
                         
                     </div>

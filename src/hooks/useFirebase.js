@@ -39,7 +39,7 @@ const useFirebase = () => {
           navigate('/')
     }
       // Signed in 
-      navigate('/')
+      // navigate('/')
       setAuthError('');
       
     })

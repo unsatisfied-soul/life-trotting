@@ -5,6 +5,8 @@ import AboutUs from './Components/Pages/AboutUs/AboutUs';
 import Experience from './Components/Pages/Experience/Experience';
 import Home from './Components/Pages/Home/Home';
 import Navbar from './Components/Pages/Home/Navbar/Navbar';
+import SingleExperience from './Components/Pages/Home/TravelExperience/SingleExperience';
+import TravelExperience from './Components/Pages/Home/TravelExperience/TravelExperience';
 import PlacesToGo from './Components/Pages/PlacesToGo/PlacesToGo';
 import TripPlan from './Components/Pages/TripPlan/TripPlan';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
@@ -19,7 +21,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />}> 
+          </Route>
+          <Route path="/travelBlog/:travelId" element={<SingleExperience />} />
           <Route path="/home" element={<Home />} />
           <Route path="/places" element={<PlacesToGo />} />
           <Route path="/aboutUs" element={<AboutUs />} />
@@ -27,6 +31,8 @@ function App() {
           <Route path="/experience" element={<PrivateRoute><Experience /></PrivateRoute> } />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
+          {/* <Route path ="/travelBlog/:travelId" element={<TravelExperience />} /> */}
+          
         </Routes>
         <Footer />
       </BrowserRouter>

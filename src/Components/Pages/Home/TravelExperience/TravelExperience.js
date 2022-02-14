@@ -1,27 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './TravelExperience.css'
 
 const TravelExperience = (props) => {
-    console.log(props)
-        // const {_id,writer,img,title,desc}=props.singleData
-        // const split = desc.split('')
-        // const doted = '...';
-        // const shortArray = split.slice(0,200).join('').concat(doted)
+    const {_id,travelImage,title,date}=props.singleExperience
+    console.log(props.singleExperience)
+    // const {_}=useParams()
     
     return (
-        <div>
-            {/* <div className="tour-img w-1/2">
-               <img className="w-full" src={img} alt="" />
-           </div>
-           <div className="tour-desc w-1/2 py-3 px-2">
-               <h6>{writer}</h6>
-               <h2 className="text-3xl font-bold mb-2">{title}</h2>
-               <p className="text-gray-600 mb-4">{shortArray}</p>
-               <Link to = {`/singletravel/${_id}`}>
-                   <button className="desc-button px-4 py-2">Read More</button>
-               </Link>
-           </div> */}
+        <div className='travel-blog relative border-2 border-[#ffd416] overflow-hidden'>
+            <Link to={`/travelBlog/${_id}`}>
+            
+            <div className="travel-img h-full">
+                <img className='h-full' src={travelImage} alt="" />
+            </div>
+            <div className="travel-desc relative -top-36 text-left bg-[#f4f4f0] py-4 pl-8 pr-3 ">
+                <h4>{date}</h4>
+                <h2 className='text-[#615247] '>{title}</h2>
+            </div>
+            </Link>
         </div>
+        
     );
 
 };

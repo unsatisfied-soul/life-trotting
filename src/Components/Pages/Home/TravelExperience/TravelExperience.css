@@ -1,0 +1,98 @@
+.single-travel{
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    height: 600px;
+}
+.travel-blog:nth-child(1){
+    background-color: #E59A5F; 
+   grid-row: 1 / 5;
+   grid-column: 1 / 3;
+   width: 100%;
+}
+.travel-blog:nth-child(2){
+    background-color: #D8A75C; 
+   grid-row: 1 / 3;
+   grid-column: 3 / 5;
+   width: 100%;
+}
+.travel-blog:nth-child(3){
+    background-color: #776B95; 
+   grid-row: 3 / 5;
+   grid-column: 3 / 5;
+   width: 100%;
+}
+.travel-blog:nth-child(4){
+    background-color: #67BD9B; 
+   grid-row: 1 / 3;
+   grid-column: 5 / 7;
+   width: 100%;
+}
+.travel-blog:nth-child(5){
+    background-color: #59669D; 
+    grid-row: 3 / 5;
+    grid-column: 5 / 7;
+    width: 100%;
+}
+.travel-blog:nth-child(1) .travel-desc{
+    max-width: 350px;
+}
+.travel-desc{
+    max-width: 200px;
+    transform: translateX(-20px);
+    transition: 2s;
+}
+.travel-blog:hover .travel-desc{
+    transform: translateX(0px);
+    transition: 2s;
+}
+.travel-img img{
+    transition: 2s;
+}
+.travel-blog:hover .travel-img img{
+    transform: scale(1.3);
+    transition: 5s;
+}
+.travel-desc h2{
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+}
+.travel-desc h4{
+    font-family: 'Satisfy', cursive;
+    color: rgb(76, 183, 245);
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+.travel-desc h4::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    background-color: rgb(76, 183, 245);
+}
+.travel-blog:nth-child(1) .travel-desc h2{
+    font-size: 26px;
+    font-weight: bold;
+}
+.travel-blog:nth-child(1) .travel-desc{
+    top: -8rem;
+}
+.travel-blog:nth-child(2) .travel-desc{
+    top: -6.5rem;
+}
+.travel-blog:nth-child(3) .travel-desc,
+.travel-blog:nth-child(5) .travel-desc{
+    top: -7.5rem;
+}
+
+.travel-desc h2{
+    font-size: 15px;
+}
+/* .travel-blog:nth-child(2) .travel-desc h2,
+.travel-blog:nth-child(5) .travel-desc h2{
+    font-size: 21px;
+} */

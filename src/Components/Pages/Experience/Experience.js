@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
+import Swal from 'sweetalert2'
 import './Experience.css'
 
 
@@ -12,7 +13,6 @@ const Experience = () => {
     const [desc,setDesc] = useState('')
     const [date,setDate] = useState('')
     const [travelImage,settravelImage]=useState('https://i.ibb.co/9tgjVFZ/image.png')
-
     const handleSubmit = (e)=> {
         e.preventDefault()
         const travelData = new FormData()
@@ -25,7 +25,16 @@ const Experience = () => {
         axios.post('https://nameless-brushlands-69236.herokuapp.com/experience', travelData)
         .then(res => {
             if(res.data.insertedId){
-                alert('your data added successfully')
+                Swal.fire({
+                    position: 'middle',
+                    icon: 'success',
+                    title: 'Your Blog Submited successfully😍',
+                    text: 'After few miniutes we are add your blog',
+                    footer: 'Thank you for share your stories❤',
+                    showConfirmButton: false,
+                    timerProgressBar: true,
+                    timer: 6000
+                  })
                 e.target.reset()
                 settravelImage('https://i.ibb.co/9tgjVFZ/image.png')
             }
@@ -65,8 +74,8 @@ const Experience = () => {
                     </div>
                 </div>
                 <input id="title" type="text" onChange={e=> setTitle(e.target.value)} name="title" placeholder="Title" required/>
+                <TextareaAutosize required className='textarea' onChange={e=> setDesc(e.target.value)} style={{boxSizing: 'border-box', width: '100%', background:'transparent', paddingBottom:'10px'}} minRows={1}  maxRows={8} defaultValue="Description..."></TextareaAutosize>
                 <input id="name" type="text" onChange={e=> setWriter(e.target.value)} name="writer" placeholder="writer name" required/>
-                <TextareaAutosize required className='textarea' onChange={e=> setDesc(e.target.value)} style={{boxSizing: 'border-box', width: '100%', background:'transparent', paddingBottom:'10px'}} minRows={1}  maxRows={6} defaultValue="Description..."></TextareaAutosize>
                 <input id="date" type="date" onChange={e=> setDate(e.target.value)} name="date" placeholder='add' required/>
                 <button className='btn btn-bg-circle py-2 px-8 text-2xl font-semibold' type="submit" title="Submit form">Add Experience</button>
             </form>
